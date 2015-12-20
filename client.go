@@ -48,8 +48,10 @@ func (client *Client) Write() {
 			bytes, err := json.Marshal(message)
 			HandleErr(err)
 			fmt.Println("Writing: ", string(bytes))
-			client.Writer.Write(bytes)
-			client.Writer.Write([]byte("\n"))
+			bytes = append(bytes, '\n')
+			nWrite, err := client.Writer.Write(bytes)
+			fmt.Println(nWrite)
+			HandleErr(err)
 			client.Writer.Flush()
 		case stop := <-client.Writing:
 			if stop {
