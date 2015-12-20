@@ -46,7 +46,8 @@ func (client *Client) Read() {
 		HandleErr(err)
 		message := Message{}
 		json.Unmarshal(buf, &message)
-		client.ReaderChan <- &message
+		fmt.Println("GOT: ", message.MessageContent)
+		//client.ReaderChan <- &message
 	}
 }
 

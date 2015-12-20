@@ -5,12 +5,12 @@ const (
 )
 
 type Message struct {
-	FromId         int64
-	ToId           int64
+	FromId         int64 `json:"FromId"`
+	ToId           int64 `json:"ToId"`
 	Channel        *Channel
-	ChannelId      int64
-	MessageType    int
-	MessageContent string
+	ChannelId      int64  `json:"ChannelId"`
+	MessageType    int    `json:"MessageType"`
+	MessageContent string `json:"MessageContent"`
 }
 
 func NewMessage() *Message {
