@@ -47,7 +47,7 @@ func (client *Client) Write() {
 		case message := <-client.WriterChan:
 			bytes, err := json.Marshal(message)
 			HandleErr(err)
-			fmt.Println("Writing: ", string(bytes))
+			fmt.Println("Server Writgets: ", string(bytes))
 			bytes = append(bytes, '\n')
 			nWrite, err := client.Writer.Write(bytes)
 			fmt.Println(nWrite)
@@ -69,7 +69,7 @@ func (client *Client) Read() {
 		message := Message{}
 		json.Unmarshal(buf, &message)
 		client.ReaderChan <- &message
-		fmt.Println("GOT: ", message.MessageContent)
+		fmt.Println("Server GOT: ", message.MessageContent)
 	}
 }
 
