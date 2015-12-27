@@ -1,3 +1,5 @@
 package main
 
-func (client *Client) CmdLeaveChannel() {}
+func CmdLeaveChannel(context *Context) *Context {
+	return context
+}

@@ -4,5 +4,6 @@ type UserLogin struct {
 	user *User
 }
 
-func (client *Client) CmdUserLogin() {
+func CmdUserLogin(context *Context) *Context {
+	return context
 }

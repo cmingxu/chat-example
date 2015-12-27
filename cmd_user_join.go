@@ -1,14 +1,11 @@
 package main
 
-import (
-	"github.com//"
-)
+import ()
 
 type UserJoin struct {
 	user *User
 }
 
-func (client *Client) CmdUserJoin() *User {
-	user := &User{}
-	return user
+func CmdUserJoin(context *Context) *Context {
+	return context
 }

@@ -1,3 +1,5 @@
 package main
 
-func (client *Client) CmdPrivateMessasge() {}
+func CmdPrivateMessasge(context *Context) *Context {
+	return context
+}

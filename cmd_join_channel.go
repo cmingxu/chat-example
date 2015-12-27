@@ -1,3 +1,5 @@
 package main
 
-func (client *Client) CmdJoinChannel() {}
+func CmdJoinChannel(context *Context) *Context {
+	return context
+}
