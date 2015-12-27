@@ -17,9 +17,6 @@ func (router *MessageRouter) Run() {
 	for {
 		select {
 		case message := <-router.Client.ReaderChan:
-			fmt.Println(message.MessageContent)
-			echoMessage := Message{MessageContent: fmt.Sprintf("echo: %s", message.MessageContent)}
-			router.Client.WriterChan <- &echoMessage
 		case stop := <-router.Client.RoutingChan:
 			if stop {
 				return
